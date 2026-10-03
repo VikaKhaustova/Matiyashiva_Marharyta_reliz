@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0d1b2a;
+    color: #ffffff;
+    line-height: 1.5;
+    padding-bottom: 40px;
+}
+
+.top-bar .stripe {
+    height: 12px;
+    background: linear-gradient(90deg, #d62828, #f77f00);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-text h1 {
+    font-size: 32px;
+    color: #ffb703;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 250px;
+    max-width: 380px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.section {
+    margin-bottom: 45px;
+}
+
+.section-title {
+    font-size: 29px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ffffff;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #d62828;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(214, 40, 40, 0.3);
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-img img {
+    transform: scale(1.05);
+}
+
+.card-label {
+    padding: 15px 10px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #f1faee;
+}
+
+.banner-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-height: 450px;
+}
+.banner-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    background: linear-gradient(135deg, #d62828, #ae2012);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(214, 40, 40, 0.4);
+}
+
+.footer h2 {
+    font-size: 32px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+
+.snowfall {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Щоб сніжинки не заважали клікати по елементах */
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Базові стилі для сніжинок */
+.snowflake {
+  position: absolute;
+  top: -20px;
+  color: #ffffff;
+  user-select: none;
+  opacity: 0.8;
+  animation-name: snowfall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Анімація падіння та покачування */
+@keyframes snowfall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) translateX(25px) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(105vh) translateX(-25px) rotate(360deg);
+    opacity: 0.2;
+  }
+}
+
+/* Налаштування розміру, швидкості та затримки для кожної сніжинки */
+.snowflake:nth-child(1)  { left: 5%;  font-size: 16px; animation-duration: 8s;  animation-delay: 0s; }
+.snowflake:nth-child(2)  { left: 15%; font-size: 24px; animation-duration: 12s; animation-delay: 2s; }
+.snowflake:nth-child(3)  { left: 25%; font-size: 14px; animation-duration: 7s;  animation-delay: 4s; }
+.snowflake:nth-child(4)  { left: 35%; font-size: 20px; animation-duration: 10s; animation-delay: 1s; }
+.snowflake:nth-child(5)  { left: 45%; font-size: 18px; animation-duration: 9s;  animation-delay: 3s; }
+.snowflake:nth-child(6)  { left: 55%; font-size: 26px; animation-duration: 11s; animation-delay: 5s; }
+.snowflake:nth-child(7)  { left: 65%; font-size: 15px; animation-duration: 8s;  animation-delay: 2s; }
+.snowflake:nth-child(8)  { left: 75%; font-size: 22px; animation-duration: 13s; animation-delay: 0s; }
+.snowflake:nth-child(9)  { left: 85%; font-size: 17px; animation-duration: 9s;  animation-delay: 4s; }
+.snowflake:nth-child(10) { left: 92%; font-size: 21px; animation-duration: 10s; animation-delay: 1s; }
+.snowflake:nth-child(11) { left: 50%; font-size: 13px; animation-duration: 6s;  animation-delay: 2s; }
+.snowflake:nth-child(12) { left: 10%; font-size: 25px; animation-duration: 14s; animation-delay: 3s; }
+
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-text h1 {
+    font-size: 24px;
+  }
+  .section-title {
+    font-size: 24px;
+  }
+  .footer h2 {
+    font-size: 22px;
+  }
+}
